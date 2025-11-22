@@ -1,84 +1,34 @@
-# 🐍 Python OOP: Abstract Class & Method Example
+#  Types of Recursion: Head Recursion in Python
 
-## 🎯 AIM
+##  AIM:
+To write a Python program to demonstrate *Head Recursion* by finding and printing the sequence based on the sum of all digits (even or odd adjusted input).
 
-To create an **abstract class** named `Shape` with an **abstract method** `calculate_area`, and implement this method in two subclasses: `Rectangle` and `Circle`.
+##  ALGORITHM:
 
----
+1. *Start*
+2. Define a recursive function fun(n)
+3. In the function:
+   - Create a recursive call at the *beginning* (Head Recursion)
+   - Print the result after the recursive call
+4. Take input from the user
+5. If input is odd, convert it to the next even number
+6. Call the recursive function
+7. *Stop*
 
-## 🧠 ALGORITHM
-
-1. **Import ABC module**:
-   - Use `from abc import ABC, abstractmethod` to define abstract classes and methods.
-
-2. **Create Abstract Class `Shape`**:
-   - Define an abstract method `calculate_area()` with `@abstractmethod`.
-
-3. **Create Subclass `Rectangle`**:
-   - Set default values for `length` and `breadth`.
-   - Override `calculate_area()` to compute the rectangle area.
-
-4. **Create Subclass `Circle`**:
-   - Set default value for `radius`.
-   - Override `calculate_area()` to compute the circle area.
-
-5. **Create Objects & Call Methods**:
-   - Instantiate `Rectangle` and `Circle`.
-   - Call their `calculate_area()` methods.
-
----
-
-## 💻 Program
+##  PROGRAM:
 ```
-from abc import ABC, abstractmethod
-class type_shape(ABC):
-    @abstractmethod
-    def area(self):
-        pass
+python
 
-class Rectangle(type_shape):
-    def __init__(self, width, height):
-        self.width = width
-        self.height = height
+def fun(n):
+    if n > 0: fun(n-2); print(n, end=" ")
 
-    def area(self):
-        return self.width * self.height
-
-class Square(type_shape):
-    def __init__(self, side):
-        self.side = side
-
-    def area(self):
-        return self.side * self.side
-
-class Circle(type_shape):
-    def __init__(self, radius):
-        self.radius = radius
-
-    def area(self):
-        return 3.14 * self.radius * self.radius
-
-class Triangle(type_shape):
-    def __init__(self, base, height):
-        self.base = base
-        self.height = height
-
-    def area(self):
-        return 0.5 * self.base * self.height
-
-rect = Rectangle(6, 4)
-circ = Circle(7)
-sq = Square(4)
-tri = Triangle(5, 4)
-
-print(f"Area of a rectangle: {rect.area()}")
-print(f"Area of a circle: {circ.area()}")
-print(f"Area of a square: {sq.area()}")
-print(f"Area of a triangle: {tri.area()}")
-
+x = int(input())
+fun(x if x % 2 == 0 else x - 1)
 ```
-## Output
-![image](https://github.com/user-attachments/assets/ca7a3bd3-1b51-4a03-a103-368e1a0bb2a7)
+## OUTPUT
 
-## Result
-Thus,the Python program To create an **abstract class** named `Shape` with an **abstract method** `calculate_area`, and implement this method in two subclasses: `Rectangle` and `Circle` is created successfully.
+![image](https://github.com/user-attachments/assets/0d26f5fe-9e30-4e5c-a175-c130f693849c)
+
+## RESULT
+
+Thus, the program has been successfully executed.
